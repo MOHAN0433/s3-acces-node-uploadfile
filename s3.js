@@ -4,6 +4,7 @@ const uploadFi = async (event) => {
     try {
       await s3Client
         .putObject({
+          //bucket name
           Bucket: BUCKET_NAME,
           Key: fields.filename || file.filename,
           Body: file.content,
