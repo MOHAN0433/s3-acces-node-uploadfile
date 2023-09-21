@@ -1,10 +1,10 @@
 const parse = require('lambda-multipart-parser')
 
-const uploadFi  = async (event) => {
-    const { file, fields } = await parse.parseFormData(event);
+const uploadFi  =  (event) => {
+    const { file, fields } =  parse.parseFormData(event);
     const tags = { filename: file.filename };
     try {
-      await s3Client
+       s3Client
         .putObject({
           //bucket name
           Bucket: BUCKET_NAME,
