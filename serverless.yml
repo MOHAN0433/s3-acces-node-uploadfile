@@ -38,7 +38,7 @@ resources:
                 - s3:PutObjectTagging
               Resource:
                 Fn::Join:
-                  - “”
+                  - ""
                   - - “arn:aws:s3:::”
                     - Ref: MyServerlessExampleBucket
                     - “/*”
