@@ -1,10 +1,10 @@
 const parse = require('lambda-multipart-parser')
 
-const uploadFi  =  (event) => {
-    const { file, fields } =  parse.parseFormData(event);
+const uploadFi  = async (event) => {
+    const { file, fields } = await parse.parseFormData({event});
     const tags = { filename: file.filename };
     try {
-       s3Client
+      await s3Client
         .putObject({
           //bucket name
           Bucket: BUCKET_NAME,
@@ -27,5 +27,5 @@ const uploadFi  =  (event) => {
   };
 
   module.exports = {
-    uploadFi,
+    uploadFi
   }
