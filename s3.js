@@ -2,6 +2,8 @@ const parse = require('lambda-multipart-parser')
 
 const uploadFile  = async (event) => {
     const { file, fields } = await parse.parse(event);
+    console.log(file);
+    console.log(fields);
     const tags = { filename: file.filename };
     console.log(tags)
     try {
