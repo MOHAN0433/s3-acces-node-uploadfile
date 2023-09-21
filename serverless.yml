@@ -1,5 +1,4 @@
-service : upload-download-file
-
+service: upload-download-file
 provider:
   name: aws
   runtime: nodejs18.x
@@ -11,7 +10,7 @@ provider:
 functions:
   # sync upload
   uploadFile:
-    handler: s3.uploadFile
+    handler: app.uploadFile
     events:
       - http:
           method: post
@@ -22,14 +21,14 @@ resources:
     MyServerlessExampleBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: file-new-example-bucket
+        BucketName: fileupload-example-bucket
     # define a policy for an existing role
     UploadFilePolicy:
       Type: AWS::IAM::Policy
       Properties:
         PolicyName: UploadObjects
         PolicyDocument:
-          Version: 'policy date'
+          Version: '2012-10-17'
           Statement:
             - Sid: LambdaPutObjects
               Effect: Allow
