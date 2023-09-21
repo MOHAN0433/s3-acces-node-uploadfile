@@ -43,4 +43,4 @@ resources:
                     - Ref: MyServerlessExampleBucket
                     - “/*”
         Roles:
-          - s3-access-role
+          - lamda-s3-access
