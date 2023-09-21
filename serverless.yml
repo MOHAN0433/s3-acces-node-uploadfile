@@ -10,7 +10,7 @@ provider:
 functions:
   # sync upload
   uploadFile:
-    handler: app.uploadFile
+    handler: s3.uploadFile
     events:
       - http:
           method: post
