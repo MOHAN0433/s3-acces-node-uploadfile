@@ -25,3 +25,7 @@ const uploadFi  = async (event) => {
       }
     }
   };
+
+  module.exports = {
+    uploadFi,
+  }
