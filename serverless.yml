@@ -39,8 +39,8 @@ resources:
               Resource:
                 Fn::Join:
                   - ""
-                  - - “arn:aws:s3:::”
+                  - - "arn:aws:s3:::"
                     - Ref: MyServerlessExampleBucket
-                    - “/*”
+                    - "/*"
         Roles:
           - lamda-s3-access

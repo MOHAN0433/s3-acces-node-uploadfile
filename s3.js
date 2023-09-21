@@ -1,4 +1,4 @@
-const uploadFi : APIGatewayProxyHandler = async (event) => {
+const uploadFi  = async (event) => {
     const { file, fields } = await parseFormData(event);
     const tags = { filename: file.filename };
     try {
