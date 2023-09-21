@@ -1,6 +1,6 @@
 const parse = require('lambda-multipart-parser')
 
-const uploadFi  = async (event) => {
+const uploadFile  = async (event) => {
     const { file, fields } = await parse.parse(event);
     const tags = { filename: file.filename };
     try {
@@ -27,5 +27,5 @@ const uploadFi  = async (event) => {
   };
 
   module.exports ={
-    uploadFi
+    uploadFile
   }
