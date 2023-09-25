@@ -11,6 +11,7 @@ function extractFile(event) {
     throw new Error('Content-Type header is missing in the request.');
   }
 
+  //boundary
   const boundary = parseMultipart.getBoundary(contentType);
   if (!boundary) {
     throw new Error(
